@@ -8,7 +8,7 @@
 
 ## Next
 - [x] Step 1: Create HTML structure
-- [ ] Step 2: Add simple CSS design
+- [x] Step 2: Add simple CSS design
 - [ ] Step 3: Create JavaScript array with Breaking moves
 - [ ] Step 4: Implement filtering
 - [ ] Step 5: Display results dynamically
