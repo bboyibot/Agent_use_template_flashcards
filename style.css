@@ -66,6 +66,28 @@ button:hover {
   background-color: #f8faff;
 }
 
+.move-card {
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid #d5deea;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.move-card:last-child {
+  margin-bottom: 0;
+}
+
+.move-card h2 {
+  margin: 0 0 8px;
+  color: #1d3557;
+  font-size: 20px;
+}
+
+.move-card p {
+  margin: 4px 0;
+}
+
 @media (max-width: 480px) {
   main {
     margin: 8px auto;

@@ -56,3 +56,51 @@ const moves = [
 ];
 
 console.log(moves);
+
+// Find moves that match both selected options.
+function filterMoves() {
+  const selectedCategory = document.getElementById("category").value;
+  const selectedDifficulty = document.getElementById("difficulty").value;
+  const resultsSection = document.getElementById("results");
+  let foundMove = false;
+
+  // Clear old results before showing new matches.
+  resultsSection.innerHTML = "";
+
+  for (let i = 0; i < moves.length; i++) {
+    if (moves[i].category === selectedCategory &&
+        moves[i].difficulty === selectedDifficulty) {
+      foundMove = true;
+
+      const moveCard = document.createElement("div");
+      moveCard.className = "move-card";
+
+      const moveName = document.createElement("h2");
+      moveName.textContent = moves[i].name;
+
+      const moveCategory = document.createElement("p");
+      moveCategory.textContent = "Category: " + moves[i].category;
+
+      const moveDifficulty = document.createElement("p");
+      moveDifficulty.textContent = "Difficulty: " + moves[i].difficulty;
+
+      const moveDescription = document.createElement("p");
+      moveDescription.textContent = moves[i].description;
+
+      moveCard.appendChild(moveName);
+      moveCard.appendChild(moveCategory);
+      moveCard.appendChild(moveDifficulty);
+      moveCard.appendChild(moveDescription);
+      resultsSection.appendChild(moveCard);
+    }
+  }
+
+  if (foundMove === false) {
+    const noMovesMessage = document.createElement("p");
+    noMovesMessage.textContent = "No moves found";
+    resultsSection.appendChild(noMovesMessage);
+  }
+}
+
+const findMovesButton = document.getElementById("findMovesBtn");
+findMovesButton.addEventListener("click", filterMoves);
